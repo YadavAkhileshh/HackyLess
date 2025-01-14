@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -51,56 +52,74 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <nav className="hidden md:flex space-x-8">
-          <a
-            href="#features"
+          <Link
+            to="/"
             className="text-lg font-semibold hover:text-indigo-200 transition duration-300"
           >
-            Features
-          </a>
-          <a
-            href="#events"
+            Home
+          </Link>
+          <Link
+            to="/events"
             className="text-lg font-semibold hover:text-indigo-200 transition duration-300"
           >
             Events
-          </a>
-          <a
-            href="#contact"
+          </Link>
+          <Link
+            to="/testimonials"
+            className="text-lg font-semibold hover:text-indigo-200 transition duration-300"
+          >
+            Testimonials
+          </Link>
+          <Link
+            to="/contact"
             className="text-lg font-semibold hover:text-indigo-200 transition duration-300"
           >
             Contact
-          </a>
+          </Link>
         </nav>
 
         {/* Mobile Menu */}
         <div
           className={`absolute top-16 left-0 w-full bg-gradient-to-r from-purple-600 via-blue-500 to-indigo-600 text-white md:hidden transition-transform transform ${
-            isOpen ? 'translate-y-0' : '-translate-y-full'
+            isOpen ? "translate-y-0" : "-translate-y-full"
           }`}
         >
           <ul className="flex flex-col items-center space-y-6 py-6">
             <li>
-              <a
-                href="#features"
+              <Link
+                to="/"
                 className="text-xl font-medium hover:text-indigo-200 transition duration-300"
+                onClick={toggleMenu}
               >
-                Features
-              </a>
+                Home
+              </Link>
             </li>
             <li>
-              <a
-                href="#events"
+              <Link
+                to="/events"
                 className="text-xl font-medium hover:text-indigo-200 transition duration-300"
+                onClick={toggleMenu}
               >
                 Events
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#contact"
+              <Link
+                to="/testimonials"
                 className="text-xl font-medium hover:text-indigo-200 transition duration-300"
+                onClick={toggleMenu}
+              >
+                Testimonials
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/contact"
+                className="text-xl font-medium hover:text-indigo-200 transition duration-300"
+                onClick={toggleMenu}
               >
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
