@@ -11,7 +11,7 @@ import Cursor from './components/Cursor';
 const App = () => {
   return (
     <div className="min-h-screen bg-gray-50">
-      <Cursor/>
+      <Cursor/>  
       <Navbar />
       <Hero />
       <main className="container mx-auto px-4 py-8">
